@@ -1,18 +1,13 @@
 {
-  "AWSEBDockerrunVersion": 2,
-  "containerDefinitions": [
-    {
-      "name": "spingboot-git-alpha",
-      "image": "pointinsights/springboot-git-alpha",
-      "essential": true,
-      "memory": 500,
-      "memoryReservation": 300,
-      "portMappings": [
+  "AWSEBDockerrunVersion": "1",
+  "Image":  {
+      "Name": "pointinsights/springboot-git-alpha",
+      "Update": true
+   },
+   "Ports": [
         {
-          "containerPort": 8085,
-          "hostPort": 80
+          "ContainerPort": 8085,
+          "HostPort": 80
         }
-      ]  
-    }
-  ]
+   ]
 }
