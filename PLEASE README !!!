@@ -1,1 +1,53 @@
-This is a test.
+Dockerizing your Spring Boot Application
+----------------------------------------
+
+==========================
+Case for Docker Containers
+===========================
+https://www.infoworld.com/article/3310941/why-you-should-use-docker-and-containers.html
+
+
+================================
+Installing  Docker on Windows 10
+=================================
+https://docs.docker.com/docker-for-windows/install-windows-home/
+https://hub.docker.com/editions/community/docker-ce-desktop-windows/
+
+
+==========================================================
+Running a Spring Boot Application from a DOCKER container
+==========================================================
+https://stackabuse.com/dockerizing-a-spring-boot-application/ (fantastic article !!!!)
+
+
+
+=========================
+Building a Docker Image
+=========================
+NOTE: the root directory of the application is where the “Dockerfile” resides. 
+When manually doing the docker build run the following commands: 
+(Pre-requisite: make sure that you've run a maven install and have the latest jar file in the "target" folder)
+1. docker build -t <docker_hub_username><springboot-git-alpha> . (the dot in the end is very important - it means all)
+2. docker images  (just to check that the image has been created)
+3. docker run -d -p 8090:8080 <docker image-name> 
+(to run the docker container on a different port - the -d is to run it as a background process)
+4. docker container ls  (this will tell you the pid of the docker container)
+
+Make sure you can run your service individually from spring.
+Make sure you can run your service individually on docker locally.
+
+NOTES: 
+This is a manual process - the best way is to run it from your maven build - the stackhouse article explains how to do it.
+
+
+
+==================================
+Pushing docker image to docker hub
+==================================
+(Pre-requisite is that youv'e completed a build on your local desktop)
+(NOTE: do not create a repo in docker - let this process do it)
+docker login -u <dockerhub_username> --password-stdin    ---- this will allow you to login to docker however the password will be taken from the keyboard
+docker push  <dockerhub_username>/springboot-docker-starter <:tag name>  -- the tag name is optional - useful only when there are multiple versions of this image.
+
+NOTES:
+This is how you tag a local image - https://docs.docker.com/engine/reference/commandline/tag/
