@@ -7,7 +7,7 @@ services:
  
 before_install:
   - chmod +x mvnw
-  - docker build -t $DOCKER_ID/springboot-git-alpha
+  - docker build -t $DOCKER_ID/springboot-git-alpha .
   - echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_ID" --password-stdin  
   - docker push pointinsights/springboot-git-alpha
   
