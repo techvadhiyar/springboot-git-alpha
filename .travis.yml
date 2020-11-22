@@ -18,18 +18,6 @@ after_success:
   - docker push pointinsights/springboot-git-alpha:latest
   
 
-
-deploy:
-  provider: elasticbeanstalk
-  region: us-east-2
-  app: springboot-git-alpha
-  env: SpringbootGitAlpha-env
-  bucket_name: elasticbeanstalk-us-east-2-693831461729
-  bucket_path: springboot-git-alpha
-  on: 
-    branch: main
-  access_key_id: $AWS_ID
-  secret_access_key: $AWS_PASSWORD
-  
+ 
 
  
