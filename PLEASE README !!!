@@ -51,3 +51,7 @@ docker push  <dockerhub_username>/springboot-docker-starter <:tag name>  -- the 
 
 NOTES:
 This is how you tag a local image - https://docs.docker.com/engine/reference/commandline/tag/
+
+
+Sample Docker Files
+https://spring.io/guides/gs/spring-boot-docker/
