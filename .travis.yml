@@ -13,9 +13,9 @@ before_install:
 script: ./mvnw clean install 
 
 after_success:
-  - docker build -t pointinsights/springboot-git-alpha .
+  - docker build -t pointinsights/springboot-git-alpha:latest .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push pointinsights/springboot-git-alpha
+  - docker push pointinsights/springboot-git-alpha:latest
   
 
 

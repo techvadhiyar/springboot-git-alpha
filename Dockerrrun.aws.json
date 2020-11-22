@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image":  {
-      "Name": "pointinsights/springboot-git-alpha",
+      "Name": "pointinsights/springboot-git-alpha:latest",
       "Update": true
    },
    "Ports": [
