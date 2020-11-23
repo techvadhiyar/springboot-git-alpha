@@ -1,12 +1,18 @@
-# Install the JDK
-FROM openjdk:8-jdk-alpine
+# Stage - Build
+# Did not officially tag this stage
+FROM maven:3.5-jdk-8-alpine
+WORKDIR /app
+COPY pom.xml .
+RUN mvn -e -B dependency:resolve
+COPY src ./src
+RUN mvn -e -B package
 
-# Install maven and copy project for compilation
-FROM maven:latest as builder
+# Stage - Generate Image
+# FROM openjdk:8-jre-alpine - having this breaks the RUN command, hence commented
+WORKDIR /app
+# COPY ./target/*.jar /app.jar - does not work since it is meant to work on your local machine and not inside the container.
+# Explanation: https://stackoverflow.com/questions/60573551/copy-or-add-command-in-dockerfile-fails-to-find-jar-file-for-springboot-applicat
+RUN cp ./target/*.jar /app.jar
+CMD ["java", "-jar", "/app.jar"]
 
-RUN mvn clean install
-
-ARG JAR_FILE=target/*.jar
-
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+# Must watch - https://www.youtube.com/watch?v=t2cDtDrNqc8 - Best Practices from Dockercon 2019
