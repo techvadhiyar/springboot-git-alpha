@@ -6,6 +6,8 @@ COPY pom.xml .
 RUN mvn -e -B dependency:resolve
 COPY src ./src
 RUN mvn -e -B package
+# needed to add this command for AWS Bean Stalk to build the docker image...otherwise errors out...
+EXPOSE 8080/tcp
 
 # Stage - Generate Image
 # FROM openjdk:8-jre-alpine - having this breaks the RUN command, hence commented
@@ -14,5 +16,6 @@ WORKDIR /app
 # Explanation: https://stackoverflow.com/questions/60573551/copy-or-add-command-in-dockerfile-fails-to-find-jar-file-for-springboot-applicat
 RUN cp ./target/*.jar /app.jar
 CMD ["java", "-jar", "/app.jar"]
+
 
 # Must watch - https://www.youtube.com/watch?v=t2cDtDrNqc8 - Best Practices from Dockercon 2019
