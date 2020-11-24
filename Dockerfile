@@ -7,7 +7,8 @@ RUN mvn -e -B dependency:resolve
 COPY src ./src
 RUN mvn -e -B package
 # needed to add this command for AWS Bean Stalk to build the docker image...otherwise errors out...
-EXPOSE 8080/tcp
+# https://askinglot.com/what-is-the-difference-between-port-80-and-8080#:~:text=Port%2080%20is%20the%20default,not%20need%20to%20specify%20it.
+EXPOSE 80/tcp
 
 # Stage - Generate Image
 # FROM openjdk:8-jre-alpine - having this breaks the RUN command, hence commented
