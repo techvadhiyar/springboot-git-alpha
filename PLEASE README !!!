@@ -55,3 +55,12 @@ This is how you tag a local image - https://docs.docker.com/engine/reference/com
 
 Sample Docker Files
 https://spring.io/guides/gs/spring-boot-docker/
+
+Single Container AWS Elastic Bean Stalk Setup
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/single-container-docker-configuration.html
+
+Spring Boot Port Change to support Ngnix
+https://stackoverflow.com/questions/37755765/spring-boot-application-deployed-on-elastic-beanstalk-java-environment-re
+turns-5
+
+
