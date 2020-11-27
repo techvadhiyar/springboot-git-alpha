@@ -59,8 +59,56 @@ https://spring.io/guides/gs/spring-boot-docker/
 Single Container AWS Elastic Bean Stalk Setup
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/single-container-docker-configuration.html
 
+=============================================
 Spring Boot Port Change to support Ngnix
+=============================================
 https://stackoverflow.com/questions/37755765/spring-boot-application-deployed-on-elastic-beanstalk-java-environment-re
 turns-5
+Nginx doesn't know on which port your spring boot applicaiton is running. 
+Make application run on port 5000 that Nginx redirects to by default by adding "server.port=5000" to application.properties
+
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-se-nginx.html
+
+https://www.digitalocean.com/community/questions/how-to-troubleshoot-common-nginx-issues-on-linux-server
+
+
+======================
+Thanks Giving Research
+======================
+Spring Boot on Docker
+https://www.youtube.com/watch?v=FlSup_eelYE
+
+
+=============================
+Docker + Travis CI + Heroku
+=============================
+https://www.youtube.com/watch?v=UvEI7CQ6Isc
+https://devopstutorialspoint.com/deploy-your-dockerize-app-in-heroku-with-travis-ci-its-pretty-simple/
+(Youtube and web page from the same author)
+
+https://medium.com/weekly-webtips/your-next-dockerized-spring-boot-application-with-travis-and-heroku-83800b3a3ad8
+
+https://www.youtube.com/watch?v=ADoQLyOgTus
+(this guy uses Git Hub to do the build and deploy to Heroku)
+
+https://medium.com/swlh/continuous-everything-automatic-deployments-to-heroku-with-travis-ci-770eb36b4b01 (no docker - just a rails app) 
+
+# shows some of the docker commands...
+https://devcenter.heroku.com/articles/container-registry-and-runtime
+
+
+================================
+Spring Boot + Elastic Bean Stalk
+=================================
+https://www.youtube.com/watch?v=6SadWaJrtnY ( he uploads the code to bean stalk) 
+https://www.youtube.com/watch?v=EtDSJRdpJM4 ( good tutorial with Spring Boot + MySQL - he uploads the code to bean stalk)
+
+This is how you SSH into the EC2 instance created by Elastic Bean Stalk - this will help me debug the NGNIX file.
+https://www.youtube.com/watch?v=6wj-BbDxKDM
+https://www.youtube.com/watch?v=jqxwCppc97s
+
+
+
+
 
 
